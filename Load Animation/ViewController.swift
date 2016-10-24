@@ -9,19 +9,26 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
+    
+    weak var loadingView:LoadingView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        print("hello world")
-        print("111111111")
+        self.view.backgroundColor = UIColor.white
+        
+        
+        let loadingView = LoadingView.showLoadingWith(view: view)
+        self.loadingView = loadingView
+        
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    @IBAction func hideLoadingView(_ sender: AnyObject) {
+        
+        loadingView.hideLoadingView()
+        
     }
-
-
+    
+    
+    
 }
 

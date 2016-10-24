@@ -14,6 +14,8 @@
 		356144FF1DBDDBA10068BAF4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 356144FD1DBDDBA10068BAF4 /* LaunchScreen.storyboard */; };
 		3561450A1DBDDBA10068BAF4 /* Load_AnimationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356145091DBDDBA10068BAF4 /* Load_AnimationTests.swift */; };
 		356145151DBDDBA10068BAF4 /* Load_AnimationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356145141DBDDBA10068BAF4 /* Load_AnimationUITests.swift */; };
+		356145231DBDF5AB0068BAF4 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356145221DBDF5AB0068BAF4 /* LoadingView.swift */; };
+		356145271DBDFA710068BAF4 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 356145261DBDFA710068BAF4 /* UIView+Extension.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,10 @@
 		356145101DBDDBA10068BAF4 /* Load AnimationUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Load AnimationUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		356145141DBDDBA10068BAF4 /* Load_AnimationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Load_AnimationUITests.swift; sourceTree = "<group>"; };
 		356145161DBDDBA10068BAF4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		356145221DBDF5AB0068BAF4 /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		356145251DBDFA710068BAF4 /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
+		356145261DBDFA710068BAF4 /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
+		35929BB41DBDFD2C00DA7E7D /* LoadingAnimation-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "LoadingAnimation-Bridging-Header.h"; path = "../LoadingAnimation-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,12 +103,15 @@
 		356144F31DBDDBA10068BAF4 /* Load Animation */ = {
 			isa = PBXGroup;
 			children = (
+				356145241DBDFA5C0068BAF4 /* Extension */,
 				356144F41DBDDBA10068BAF4 /* AppDelegate.swift */,
 				356144F61DBDDBA10068BAF4 /* ViewController.swift */,
+				356145221DBDF5AB0068BAF4 /* LoadingView.swift */,
 				356144F81DBDDBA10068BAF4 /* Main.storyboard */,
 				356144FB1DBDDBA10068BAF4 /* Assets.xcassets */,
 				356144FD1DBDDBA10068BAF4 /* LaunchScreen.storyboard */,
 				356145001DBDDBA10068BAF4 /* Info.plist */,
+				35929BB41DBDFD2C00DA7E7D /* LoadingAnimation-Bridging-Header.h */,
 			);
 			path = "Load Animation";
 			sourceTree = "<group>";
@@ -123,6 +132,15 @@
 				356145161DBDDBA10068BAF4 /* Info.plist */,
 			);
 			path = "Load AnimationUITests";
+			sourceTree = "<group>";
+		};
+		356145241DBDFA5C0068BAF4 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				356145251DBDFA710068BAF4 /* UIView+Extension.h */,
+				356145261DBDFA710068BAF4 /* UIView+Extension.m */,
+			);
+			name = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -264,6 +282,8 @@
 			files = (
 				356144F71DBDDBA10068BAF4 /* ViewController.swift in Sources */,
 				356144F51DBDDBA10068BAF4 /* AppDelegate.swift in Sources */,
+				356145271DBDFA710068BAF4 /* UIView+Extension.m in Sources */,
+				356145231DBDF5AB0068BAF4 /* LoadingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -418,6 +438,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Nao.Taasky.Load-Animation";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "LoadingAnimation-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -431,6 +452,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Nao.Taasky.Load-Animation";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "LoadingAnimation-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -512,6 +534,7 @@
 				3561451B1DBDDBA10068BAF4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3561451C1DBDDBA10068BAF4 /* Build configuration list for PBXNativeTarget "Load AnimationTests" */ = {
 			isa = XCConfigurationList;
@@ -520,6 +543,7 @@
 				3561451E1DBDDBA10068BAF4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3561451F1DBDDBA10068BAF4 /* Build configuration list for PBXNativeTarget "Load AnimationUITests" */ = {
 			isa = XCConfigurationList;
@@ -528,6 +552,7 @@
 				356145211DBDDBA10068BAF4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
